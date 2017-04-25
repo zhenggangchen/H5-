@@ -7,18 +7,18 @@
 <body>
 <header>
     <h1>
-        <%= title  %>
+        <%= title %>
     </h1>
 </header>
 <div class="left">
-    <ul>
-        <% music.forEach(function (name) {%>
-            <li><%= name%></li>
-        <%})%>
+    <ul id="list">
+        <% music.forEach(function (name) { %>
+        <li><%= name %></li>
+        <% }) %>
     </ul>
 </div>
 <div class="right">
-
+    <script type="text/javascript" src="/javascript/index.js"></script>
 </div>
 </body>
 </html>
