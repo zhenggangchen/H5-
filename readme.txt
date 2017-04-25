@@ -20,8 +20,22 @@ createBufferSource(),创建BufferSourceNode对象
 createAnalyser(),创建AnalyserNode对象
 createGain()/createGainNode(),创建GainNode对象
 
+AudioBufferSourceNode
+表示内存中的一段音频资源，其音频数据存在于AudioBuffer中(其buffer属性)
+创建：var buffersource=ac.createBufferSource();
+属性：buffer,AudioBuffer对象，表示要播放的音频资源数据。--子属性：duration，该音频资源的时长（秒）
+loop，是否循环播放，默认false
+onended，可绑定音频播放完毕时调用的事件处理程序
 
+方法;
+start/noteOn(when=ac.aurrentTime,offset=0,duration=buffer.duration-offset),开始播放音频。when:何时开始播放;offset:从音频的第几秒开始播放;duration:播放几秒;
 
+atop/noteOff(when=ac.currentTime),结束播放音频
+
+GainNode
+改变音频音量的对象，会改变通过它的音频数据所有的sample frame的信号强度
+创建：var gainNode=ac.createGain()/ac.createGainNode();后一个为较老的方法
+gain,AudioParam对象，通过改变其value值可以改变音频信号的强弱，默认的value属性值为1，通常最小值为0，最大值为1，其value值也可大于1，小于0。
 
 
 
