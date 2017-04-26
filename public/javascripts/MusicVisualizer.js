@@ -69,10 +69,10 @@ MusicVisualizer.prototype.changeVolume = function (precent) {
 }
 
 MusicVisualizer.prototype.visualize = function () {
-    var arr = new Uint8Array(this.analyser.frequencyBinCount); //ÊµÊ±µÃµ½µÄÒôÆµÆµÓòµÄÊı¾İ¸öÊıÎªÇ°ÃæÉèÖÃµÄfftSizeµÄÒ»°ë
+    var arr = new Uint8Array(this.analyser.frequencyBinCount); //å®æ—¶å¾—åˆ°çš„éŸ³é¢‘é¢‘åŸŸçš„æ•°æ®ä¸ªæ•°ä¸ºå‰é¢è®¾ç½®çš„fftSizeçš„ä¸€åŠ
 
     requestAnimationFrame = window.requestAnimationFrame
-        || window.webkitRequestAnimationFrame;  //¶¯»­º¯Êı
+        || window.webkitRequestAnimationFrame;  //åŠ¨ç”»å‡½æ•°
     var self = this;
 
     function v() {

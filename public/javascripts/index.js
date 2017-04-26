@@ -5,19 +5,19 @@
 function $(s) {
     return document.querySelectorAll(s);
 }
-////ajaxÇëÇó·şÎñ¶ËÒôÆµ×ÊÔ´Êı¾İ
+////ajaxè¯·æ±‚æœåŠ¡ç«¯éŸ³é¢‘èµ„æºæ•°æ®
 //var xhr = new XMLHttpRequest();
 ////web Audios API
-////¼æÈİ
+////å…¼å®¹
 //var ac = new (window.AudioContext || window.webkitAudioContext)();
-////Ìí¼ÓÒôÁ¿¿ØÖÆ
-//var gainNode = ac[ac.createGain ? "createGain" : "createGainNode"]();// ¸Ä±äÒôÆµÒôÁ¿µÄ¶ÔÏó
+////æ·»åŠ éŸ³é‡æ§åˆ¶
+//var gainNode = ac[ac.createGain ? "createGain" : "createGainNode"]();// æ”¹å˜éŸ³é¢‘éŸ³é‡çš„å¯¹è±¡
 //
-//gainNode.connect(ac.destination); //ËùÓĞÒôÆµÊä³ö¾Û¼¯µØ
+//gainNode.connect(ac.destination); //æ‰€æœ‰éŸ³é¢‘è¾“å‡ºèšé›†åœ°
 //
-//var analyser = ac.createAnalyser();//ÒôÆµ·ÖÎö¶ÔÏó
-var size = 128;//¿ØÖÆÊèÃÜ
-//analyser.fftSize = size * 2; //ÉèÖÃFFTµÄ´óĞ¡(ÓÃÓÚ½«Ò»¸öĞÅºÅ±ä»»µ½ÆµÓò£¬Ä¬ÈÏÊÇ2048)
+//var analyser = ac.createAnalyser();//éŸ³é¢‘åˆ†æå¯¹è±¡
+var size = 128;//æ§åˆ¶ç–å¯†
+//analyser.fftSize = size * 2; //è®¾ç½®FFTçš„å¤§å°(ç”¨äºå°†ä¸€ä¸ªä¿¡å·å˜æ¢åˆ°é¢‘åŸŸï¼Œé»˜è®¤æ˜¯2048)
 //analyser.connect(gainNode);
 //
 //var source = null;
@@ -38,7 +38,7 @@ var mv = new MusicVisualizer({
 });
 
 
-//¸Ä±äli±»Ñ¡ÖĞÊ±µÄÑùÊ½
+//æ”¹å˜liè¢«é€‰ä¸­æ—¶çš„æ ·å¼
 var lis = $("#list li");
 
 for (var i = 0; i < lis.length; i++) {
@@ -72,12 +72,12 @@ function getDots() {
     }
 }
 
-function resize() { //¶¯Ì¬¸Ä±äcanvaÇøÓòµÄ¿í¸ß
+function resize() { //åŠ¨æ€æ”¹å˜canvaåŒºåŸŸçš„å®½é«˜
     height = box.clientHeight;
     width = box.clientWidth;
     canvas.height = height;
     canvas.width = width;
-    line = ctx.createLinearGradient(0, 0, 0, height);//´´½¨ÏßĞÔ½¥±ä
+    line = ctx.createLinearGradient(0, 0, 0, height);//åˆ›å»ºçº¿æ€§æ¸å˜
     line.addColorStop(0, "red");
     line.addColorStop(0.5, "yellow");
     line.addColorStop(1, "green");
@@ -89,9 +89,9 @@ resize();
 window.onresize = resize;
 
 
-//»­Öù×´Í¼
+//ç”»æŸ±çŠ¶å›¾
 function draw(arr) {
-    ctx.clearRect(0, 0, width, height);// Çå³ıÉÏ´Îcanvas,±£Ö¤Á÷³©Ğ§¹û
+    ctx.clearRect(0, 0, width, height);// æ¸…é™¤ä¸Šæ¬¡canvas,ä¿è¯æµç•…æ•ˆæœ
     var w = width / size;
     var cw=w*0.6;
     var capH=cw;
@@ -99,8 +99,8 @@ function draw(arr) {
     for (var i = 0; i < size; i++) {
         if (draw.type == "column") {
             var h = arr[i] / 256 * height;
-            ctx.fillRect(w * i, height - h, w * 0.6, h); //xÖá×ø±ê,yÖá×ø±ê,¿í¶È(0.6ÁôÎª¼äÏ¶),¸ß¶È
-            ctx.fillRect(w * i, height - h, w * 0.6, h); //xÖá×ø±ê,yÖá×ø±ê,¿í¶È(0.6ÁôÎª¼äÏ¶),¸ß¶È
+            ctx.fillRect(w * i, height - h, w * 0.6, h); //xè½´åæ ‡,yè½´åæ ‡,å®½åº¦(0.6ç•™ä¸ºé—´éš™),é«˜åº¦
+            ctx.fillRect(w * i, height - h, w * 0.6, h); //xè½´åæ ‡,yè½´åæ ‡,å®½åº¦(0.6ç•™ä¸ºé—´éš™),é«˜åº¦
 
         } else if (draw.type == "dot") {
             ctx.beginPath();
@@ -135,19 +135,19 @@ for (var i = 0; i < types.length; i++) {
 /*function load(url) {
  var n = ++count;
  source && source[source.stop ? "stop" : "noteOff"]();
- xhr.abort();// ÖÕÖ¹Ö®Ç°µÄÒì²½ÇëÇó
+ xhr.abort();// ç»ˆæ­¢ä¹‹å‰çš„å¼‚æ­¥è¯·æ±‚
  xhr.open("GET", url);
- xhr.responseType = "arraybuffer";//ÒôÆµÊı¾İÒÔ¶ş½øÖÆĞÎÊ½·µ»Ø£¬±ãÓÚ½âÑ¹Ëõ
- xhr.onload = function () { //¼ÓÔØÍê³É
- if (n != count)return; //Õı³£Çé¿önºÍcountÊÇÏàµÈµÄ,ÓÃµ½ÁË±Õ°üµÄÖªÊ¶
- ac.decodeAudioData(xhr.response, function (buffer) { // Òì²½½âÂë°üº¬ÔÚarrayBufferÖĞµÄÒôÆµÊı¾İ
+ xhr.responseType = "arraybuffer";//éŸ³é¢‘æ•°æ®ä»¥äºŒè¿›åˆ¶å½¢å¼è¿”å›ï¼Œä¾¿äºè§£å‹ç¼©
+ xhr.onload = function () { //åŠ è½½å®Œæˆ
+ if (n != count)return; //æ­£å¸¸æƒ…å†µnå’Œcountæ˜¯ç›¸ç­‰çš„,ç”¨åˆ°äº†é—­åŒ…çš„çŸ¥è¯†
+ ac.decodeAudioData(xhr.response, function (buffer) { // å¼‚æ­¥è§£ç åŒ…å«åœ¨arrayBufferä¸­çš„éŸ³é¢‘æ•°æ®
  if (n != count)return;
- var bufferSource = ac.createBufferSource(); // ´´½¨AudioBufferSourceNode¶ÔÏó
- bufferSource.buffer = buffer; // ±íÊ¾Òª²¥·ÅµÄÒôÆµ×ÊÔ´Êı¾İ
- bufferSource.connect(analyser);  // Á¬½Óµ½·ÖÎö¶ÔÏóÉÏ
+ var bufferSource = ac.createBufferSource(); // åˆ›å»ºAudioBufferSourceNodeå¯¹è±¡
+ bufferSource.buffer = buffer; // è¡¨ç¤ºè¦æ’­æ”¾çš„éŸ³é¢‘èµ„æºæ•°æ®
+ bufferSource.connect(analyser);  // è¿æ¥åˆ°åˆ†æå¯¹è±¡ä¸Š
  //bufferSource.connect(gainNode);
  //bufferSource.connect(ac.destination);
- bufferSource[bufferSource.start ? "start" : "noteOn"](0);  // ÀÏ°æ±¾ÊÇnoteOn
+ bufferSource[bufferSource.start ? "start" : "noteOn"](0);  // è€ç‰ˆæœ¬æ˜¯noteOn
  source = bufferSource
 
  }, function (err) {
@@ -158,12 +158,12 @@ for (var i = 0; i < types.length; i++) {
  }
 
  function visualizer() {
- var arr = new Uint8Array(analyser.frequencyBinCount); //ÊµÊ±µÃµ½µÄÒôÆµÆµÓòµÄÊı¾İ¸öÊıÎªÇ°ÃæÉèÖÃµÄfftSizeµÄÒ»°ë
+ var arr = new Uint8Array(analyser.frequencyBinCount); //å®æ—¶å¾—åˆ°çš„éŸ³é¢‘é¢‘åŸŸçš„æ•°æ®ä¸ªæ•°ä¸ºå‰é¢è®¾ç½®çš„fftSizeçš„ä¸€åŠ
 
- //¼æÈİĞÔĞ´·¨
- requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame;  //¶¯»­º¯Êı
+ //å…¼å®¹æ€§å†™æ³•
+ requestAnimationFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame;  //åŠ¨ç”»å‡½æ•°
  function v() {
- analyser.getByteFrequencyData(arr); // ¸´ÖÆÒôÆµµ±Ç°µÄÆµÓòÊı¾İµ½Unit8ArrayÖĞ
+ analyser.getByteFrequencyData(arr); // å¤åˆ¶éŸ³é¢‘å½“å‰çš„é¢‘åŸŸæ•°æ®åˆ°Unit8Arrayä¸­
 
  draw(arr);
 
@@ -175,14 +175,14 @@ for (var i = 0; i < types.length; i++) {
 
  visualizer();
 
- function changeVolume(percent) {  // ¸Ä±äÒôÁ¿´óĞ¡º¯Êı
+ function changeVolume(percent) {  // æ”¹å˜éŸ³é‡å¤§å°å‡½æ•°
  gainNode.gain.value = percent * percent;
  }*/
 $("#volume")[0].onmousemove = function () {
-    mv.changeVolume(this.value / this.max); //ÆµÂÊ
+    mv.changeVolume(this.value / this.max); //é¢‘ç‡
 }
 
-//$("#volume")[0].onchange();   //ÈÃËüÄ¬ÈÏ60ÉúĞ§
+//$("#volume")[0].onchange();   //è®©å®ƒé»˜è®¤60ç”Ÿæ•ˆ
 
 $('#volume')[0].onmousemove();
 
