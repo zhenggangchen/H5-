@@ -16,7 +16,7 @@ function $(s) {
 //gainNode.connect(ac.destination); //所有音频输出聚集地
 //
 //var analyser = ac.createAnalyser();//音频分析对象
-var size = 128;//控制疏密
+var size = 32;//控制疏密
 //analyser.fftSize = size * 2; //设置FFT的大小(用于将一个信号变换到频域，默认是2048)
 //analyser.connect(gainNode);
 //
@@ -53,7 +53,6 @@ for (var i = 0; i < lis.length; i++) {
 }
 
 
-
 function random(m, n) {
     return Math.round(Math.random() * (n - m) + m);
 }
@@ -67,7 +66,7 @@ function getDots() {
             x: x,
             y: y,
             color: color,
-            cap:0
+            cap: 0
         });
     }
 }
@@ -93,18 +92,25 @@ window.onresize = resize;
 function draw(arr) {
     ctx.clearRect(0, 0, width, height);// 清除上次canvas,保证流畅效果
     var w = width / size;
-    var cw=w*0.6;
-    var capH=cw;
+    var cw = w * 0.6;
+    var capH = cw > 10 ? 10 : cw;
     ctx.fillStyle = line;
     for (var i = 0; i < size; i++) {
+        var o = DOTS[i];
         if (draw.type == "column") {
             var h = arr[i] / 256 * height;
             ctx.fillRect(w * i, height - h, w * 0.6, h); //x轴坐标,y轴坐标,宽度(0.6留为间隙),高度
-            ctx.fillRect(w * i, height - h, w * 0.6, h); //x轴坐标,y轴坐标,宽度(0.6留为间隙),高度
-
+            ctx.fillRect(w * i, height - (o.cap + capH), cw, capH); //x轴坐标,y轴坐标,宽度(0.6留为间隙),高度
+            o.cap--;
+            if (o.cap < 0) {
+                o.cap = 0;
+            }
+            if (h > 0 && o.cap < h + 40) {
+                o.cap = h + 40 > height - capH ? height - capH : h + 40;
+            }
         } else if (draw.type == "dot") {
             ctx.beginPath();
-            var o = DOTS[i];
+
             var r = arr[i] / 256 * 50;
             ctx.arc(o.x, o.y, r, 0, Math.PI * 2, true);
             var g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, r);
