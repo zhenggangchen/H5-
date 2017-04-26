@@ -1,44 +1,44 @@
 npm i -g express-generator
 express -e music
 npm i -g supervisor
-supervisor bin/www   ×Ô¶¯¼àÊÓÎÄ¼şÊÇ·ñ±ä»¯
+supervisor bin/www   è‡ªåŠ¨ç›‘è§†æ–‡ä»¶æ˜¯å¦å˜åŒ–
 
 
 AudioContext
-°üº¬¸÷¸öAudioNode¶ÔÏóÒÔ¼°ËüÃÇµÄÁªÏµµÄ¶ÔÏó£¬¿ÉÒÔÀí½âÎªaudioÉÏÏÂÎÄ¶ÔÏó¡£¾ø´ó¶àÊıÇé¿öÏÂ£¬Ò»¸ödocumentÖĞÖ»ÓĞÒ»¸öAudioContext¡£
-´´½¨£ºvar ac =new window.AudioContext();
-ÊôĞÔ£º
+åŒ…å«å„ä¸ªAudioNodeå¯¹è±¡ä»¥åŠå®ƒä»¬çš„è”ç³»çš„å¯¹è±¡ï¼Œå¯ä»¥ç†è§£ä¸ºaudioä¸Šä¸‹æ–‡å¯¹è±¡ã€‚ç»å¤§å¤šæ•°æƒ…å†µä¸‹ï¼Œä¸€ä¸ªdocumentä¸­åªæœ‰ä¸€ä¸ªAudioContextã€‚
+åˆ›å»ºï¼švar ac =new window.AudioContext();
+å±æ€§ï¼š
 
-destination£¬AudioDestinationNode¶ÔÏó£¬ËùÓĞµÄÒôÆµÊä³ö¾Û¼¯µØ£¬Ïàµ±ÓÚÒôÆµµÄÓ²¼ş£¬ËùÓĞµÄAudioNode¶¼Ö±½Ó»ò¼ä½ÓÁ´½Óµ½ÕâÀï
+destinationï¼ŒAudioDestinationNodeå¯¹è±¡ï¼Œæ‰€æœ‰çš„éŸ³é¢‘è¾“å‡ºèšé›†åœ°ï¼Œç›¸å½“äºéŸ³é¢‘çš„ç¡¬ä»¶ï¼Œæ‰€æœ‰çš„AudioNodeéƒ½ç›´æ¥æˆ–é—´æ¥é“¾æ¥åˆ°è¿™é‡Œ
 
-currentTime£¬AudioContext´Ó´´½¨¿ªÊ¼µ½µ±Ç°µÄÊ±¼ä£¨Ãë£©
+currentTimeï¼ŒAudioContextä»åˆ›å»ºå¼€å§‹åˆ°å½“å‰çš„æ—¶é—´ï¼ˆç§’ï¼‰
 
-·½·¨£º
-decodeAudioData(arrayBuffer,succ(buffer),err),Òì²½½âÂë°üº¬ÔÚarrayBufferÖĞµÄÒôÆµÊı¾İ
+æ–¹æ³•ï¼š
+decodeAudioData(arrayBuffer,succ(buffer),err),å¼‚æ­¥è§£ç åŒ…å«åœ¨arrayBufferä¸­çš„éŸ³é¢‘æ•°æ®
 
-createBufferSource(),´´½¨BufferSourceNode¶ÔÏó
-createAnalyser(),´´½¨AnalyserNode¶ÔÏó
-createGain()/createGainNode(),´´½¨GainNode¶ÔÏó
+createBufferSource(),åˆ›å»ºBufferSourceNodeå¯¹è±¡
+createAnalyser(),åˆ›å»ºAnalyserNodeå¯¹è±¡
+createGain()/createGainNode(),åˆ›å»ºGainNodeå¯¹è±¡
 
 AudioBufferSourceNode
-±íÊ¾ÄÚ´æÖĞµÄÒ»¶ÎÒôÆµ×ÊÔ´£¬ÆäÒôÆµÊı¾İ´æÔÚÓÚAudioBufferÖĞ(ÆäbufferÊôĞÔ)
-´´½¨£ºvar buffersource=ac.createBufferSource();
-ÊôĞÔ£ºbuffer,AudioBuffer¶ÔÏó£¬±íÊ¾Òª²¥·ÅµÄÒôÆµ×ÊÔ´Êı¾İ¡£--×ÓÊôĞÔ£ºduration£¬¸ÃÒôÆµ×ÊÔ´µÄÊ±³¤£¨Ãë£©
-loop£¬ÊÇ·ñÑ­»·²¥·Å£¬Ä¬ÈÏfalse
-onended£¬¿É°ó¶¨ÒôÆµ²¥·ÅÍê±ÏÊ±µ÷ÓÃµÄÊÂ¼ş´¦Àí³ÌĞò
+è¡¨ç¤ºå†…å­˜ä¸­çš„ä¸€æ®µéŸ³é¢‘èµ„æºï¼Œå…¶éŸ³é¢‘æ•°æ®å­˜åœ¨äºAudioBufferä¸­(å…¶bufferå±æ€§)
+åˆ›å»ºï¼švar buffersource=ac.createBufferSource();
+å±æ€§ï¼šbuffer,AudioBufferå¯¹è±¡ï¼Œè¡¨ç¤ºè¦æ’­æ”¾çš„éŸ³é¢‘èµ„æºæ•°æ®ã€‚--å­å±æ€§ï¼šdurationï¼Œè¯¥éŸ³é¢‘èµ„æºçš„æ—¶é•¿ï¼ˆç§’ï¼‰
+loopï¼Œæ˜¯å¦å¾ªç¯æ’­æ”¾ï¼Œé»˜è®¤false
+onendedï¼Œå¯ç»‘å®šéŸ³é¢‘æ’­æ”¾å®Œæ¯•æ—¶è°ƒç”¨çš„äº‹ä»¶å¤„ç†ç¨‹åº
 
-·½·¨;
-start/noteOn(when=ac.aurrentTime,offset=0,duration=buffer.duration-offset),¿ªÊ¼²¥·ÅÒôÆµ¡£when:ºÎÊ±¿ªÊ¼²¥·Å;offset:´ÓÒôÆµµÄµÚ¼¸Ãë¿ªÊ¼²¥·Å;duration:²¥·Å¼¸Ãë;
+æ–¹æ³•;
+start/noteOn(when=ac.aurrentTime,offset=0,duration=buffer.duration-offset),å¼€å§‹æ’­æ”¾éŸ³é¢‘ã€‚when:ä½•æ—¶å¼€å§‹æ’­æ”¾;offset:ä»éŸ³é¢‘çš„ç¬¬å‡ ç§’å¼€å§‹æ’­æ”¾;duration:æ’­æ”¾å‡ ç§’;
 
-atop/noteOff(when=ac.currentTime),½áÊø²¥·ÅÒôÆµ
+atop/noteOff(when=ac.currentTime),ç»“æŸæ’­æ”¾éŸ³é¢‘
 
 GainNode
-¸Ä±äÒôÆµÒôÁ¿µÄ¶ÔÏó£¬»á¸Ä±äÍ¨¹ıËüµÄÒôÆµÊı¾İËùÓĞµÄsample frameµÄĞÅºÅÇ¿¶È
-´´½¨£ºvar gainNode=ac.createGain()/ac.createGainNode();ºóÒ»¸öÎª½ÏÀÏµÄ·½·¨
-gain,AudioParam¶ÔÏó£¬Í¨¹ı¸Ä±äÆävalueÖµ¿ÉÒÔ¸Ä±äÒôÆµĞÅºÅµÄÇ¿Èõ£¬Ä¬ÈÏµÄvalueÊôĞÔÖµÎª1£¬Í¨³£×îĞ¡ÖµÎª0£¬×î´óÖµÎª1£¬ÆävalueÖµÒ²¿É´óÓÚ1£¬Ğ¡ÓÚ0¡£
+æ”¹å˜éŸ³é¢‘éŸ³é‡çš„å¯¹è±¡ï¼Œä¼šæ”¹å˜é€šè¿‡å®ƒçš„éŸ³é¢‘æ•°æ®æ‰€æœ‰çš„sample frameçš„ä¿¡å·å¼ºåº¦
+åˆ›å»ºï¼švar gainNode=ac.createGain()/ac.createGainNode();åä¸€ä¸ªä¸ºè¾ƒè€çš„æ–¹æ³•
+gain,AudioParamå¯¹è±¡ï¼Œé€šè¿‡æ”¹å˜å…¶valueå€¼å¯ä»¥æ”¹å˜éŸ³é¢‘ä¿¡å·çš„å¼ºå¼±ï¼Œé»˜è®¤çš„valueå±æ€§å€¼ä¸º1ï¼Œé€šå¸¸æœ€å°å€¼ä¸º0ï¼Œæœ€å¤§å€¼ä¸º1ï¼Œå…¶valueå€¼ä¹Ÿå¯å¤§äº1ï¼Œå°äº0ã€‚
 
 
-
+https://github.com/zhenggangchen/H5-/blob/master/public/images/API%E5%85%B3%E7%B3%BB%E5%9B%BE.png?raw=true
 
 
 
