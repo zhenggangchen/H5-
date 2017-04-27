@@ -41,19 +41,23 @@ header h1 {
     left: 10px;
     top: 170px;
     bottom: 10px;
-    width: 200px;
+    /*width: 200px;*/
+    width: 15%;
     border: solid #fff 1px;
+    overflow: auto;
 }
 
-.left ul {
-    overflow: hidden;
-}
+/*.left ul {*/
+/*overflow: hidden;*/
+/*}*/
 
 .left ul li {
     height: 30px;
     line-height: 30px;
     cursor: pointer;
     overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .left ul li.selected {
@@ -64,7 +68,10 @@ header h1 {
     top: 170px;
     right: 10px;
     bottom: 10px;
-    left: 220px;
+    /*left: 220px;*/
+    /*css里的计算函数*/
+    left: -webkit-calc(15% + 20px);
+    left: calc(15% + 20px);
     border: solid #ffffff 1px;
 }
 
@@ -105,3 +112,74 @@ li {
     display: list-item;
     text-align: -webkit-match-parent
 }
+
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #999;
+    border-radius: 10px;
+    outline: none;
+}
+
+/*以下时设置滑块*/
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 12px;
+    width: 12px;
+    background: #ffffff;
+    border-radius: 100%;
+
+}
+
+/*火狐的写法*/
+/*以下为滑条的样式*/
+input[type="range"]::-moz-range-track {
+    height: 8px;
+    background: #999;
+    border-radius: 10px;
+    border: none;
+}
+
+/*以下为滑块的样式*/
+input[type="range"]::-moz-range-thumb {
+    height: 12px;
+    width: 12px;
+    background: #fff;
+    border-radius: 100%;
+    border: none;
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 500px) {
+    body {
+        font-size: 12px;
+    }
+    header {
+        height: 80px;
+    }
+
+    header h1 {
+        font-size: 24px;
+        height: 34px;
+        line-height: 34px;
+    }
+
+    header .type li {
+        height: 16px;
+        line-height: 16px;
+        width: 50px;
+    }
+    .left,.right{
+        top:100px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
