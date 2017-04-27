@@ -26,8 +26,8 @@
       <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/javascripts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.44954127">
-              <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state vertical-scroll-proportion="-1.5382262">
+              <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
               <folding>
                 <element signature="n#!!doc;n#$#0" expanded="false" />
                 <element signature="e#458#464#0" expanded="false" />
@@ -89,8 +89,8 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="898" />
-    <option name="y" value="108" />
+    <option name="x" value="930" />
+    <option name="y" value="110" />
     <option name="width" value="962" />
     <option name="height" value="805" />
   </component>
@@ -300,7 +300,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="898" y="108" width="962" height="805" extended-state="0" />
+    <frame x="930" y="110" width="962" height="805" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18432203" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -442,8 +442,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/javascripts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.44954127">
-          <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state vertical-scroll-proportion="-1.5382262">
+          <caret line="67" column="12" selection-start-line="67" selection-start-column="12" selection-end-line="67" selection-end-column="12" />
           <folding>
             <element signature="n#!!doc;n#$#0" expanded="false" />
             <element signature="e#458#464#0" expanded="false" />

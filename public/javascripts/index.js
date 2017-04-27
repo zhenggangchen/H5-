@@ -61,10 +61,11 @@ function getDots() {
     for (var i = 0; i < size; i++) {
         var x = random(0, width);
         var y = random(0, height);
-        var color = "rgb(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ")";
+        var color = "rgba(" + random(0, 255) + "," + random(0, 255) + "," + random(0, 255) + ",0)";
         DOTS.push({
             x: x,
             y: y,
+            dx: random(1, 4),
             color: color,
             cap: 0
         });
@@ -110,14 +111,19 @@ function draw(arr) {
             }
         } else if (draw.type == "dot") {
             ctx.beginPath();
-
-            var r = arr[i] / 256 * 50;
+            //var r = 10 + arr[i] / 256 * 50;
+            var r = 10 + arr[i] / 256 * (height > width ? width : height) / 10;
             ctx.arc(o.x, o.y, r, 0, Math.PI * 2, true);
             var g = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, r);
             g.addColorStop(0, "#fff");
             g.addColorStop(1, o.color);
             ctx.fillStyle = g;
             ctx.fill();
+            o.x += o.dx;
+            o.x = o.x > width ? 0 : o.x;
+            /*if (o.x > width) {
+             o.x = 0;
+             }*/
             //ctx.strokeStyle = "#fff";
             //ctx.stroke();
         }
