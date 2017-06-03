@@ -38,8 +38,8 @@ GainNode
 gain,AudioParam对象，通过改变其value值可以改变音频信号的强弱，默认的value属性值为1，通常最小值为0，最大值为1，其value值也可大于1，小于0。
 
 
-(https://raw.githubusercontent.com/zhenggangchen/H5-/master/public/images/API%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
-(https://github.com/zhenggangchen/H5-/blob/master/public/images/API%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
+![](https://raw.githubusercontent.com/zhenggangchen/H5-/master/public/images/API%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
+![](https://github.com/zhenggangchen/H5-/blob/master/public/images/API%E5%85%B3%E7%B3%BB%E5%9B%BE.png)
 
 
 
